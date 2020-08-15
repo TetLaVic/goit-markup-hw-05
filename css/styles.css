@@ -295,6 +295,8 @@ p {
 
 	color: var(--white-color);
 	background-color: var(--accent-color);
+
+	cursor: pointer;
 }
 
 /* Advantages & Work & Team */
@@ -656,7 +658,7 @@ p {
 }
 
 .backdrop.is-hidden {
-	visibility: hidden;
+	/* visibility: hidden; */
 	pointer-events: none;
 	opacity: 0;
 }
@@ -665,7 +667,7 @@ p {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%) scale(1);
 
 	width: 100%;
 	max-width: 528px;
@@ -678,6 +680,12 @@ p {
 
 	background-color: var(--white-color);
 	color: var(--text-color);
+
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden .modal {
+	transform: translate(-50%, -50%) scale(0);
 }
 
 .message {
@@ -701,4 +709,6 @@ p {
 	background-image: url(../images/btn-close.svg);
 	background-repeat: no-repeat;
 	background-position: center;
+
+	cursor: pointer;
 }
